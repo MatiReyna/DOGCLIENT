@@ -7,4 +7,4 @@ const Cards = ({ dog }) => {
     )
 };
 
-export default Cards;
+export default Cards;  // Comentario para no perder el commit
