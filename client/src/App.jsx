@@ -9,8 +9,8 @@ const App = () => {
   return (
     <div>
       <Routes>
-        <Route path='/' component={ <LandingPage /> } />
-        <Route path='/home' component={ <HomePage /> } />
+        <Route path='/' element={ <LandingPage /> } />
+        <Route path='/home' element={ <HomePage /> } />
       </Routes>
     </div>
   )
