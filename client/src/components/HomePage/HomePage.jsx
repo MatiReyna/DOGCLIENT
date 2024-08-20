@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { getAllDogs } from '../../redux/actions/actions';
 
 // <-- Importamos los componentes -->
@@ -9,13 +9,15 @@ const HomePage = () => {
 
     const dispatch = useDispatch();
 
+    const dogs = useSelector((state) => state.dogs);  // Obtiene la lista de perros del estado global.
+
     useEffect(() => {
         dispatch(getAllDogs());
     }, []);
 
     return (
         <div>
-            <Cards dog={dog} />
+            <Cards dogs={dogs} />
         </div>
     )
 };
