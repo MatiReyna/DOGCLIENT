@@ -22,4 +22,4 @@ const HomePage = () => {
     )
 };
 
-export default HomePage;  // Comentario para mantener el commint. 
+export default HomePage;  // Comentario para mantener el commint. Otro comentario 
