@@ -9,7 +9,7 @@ const reduce = (state = initialState, action) => {
         case GET_ALL_DOGS:
             return {
                 ...state,
-                dogs: action.payload
+                dogs: action.payload  // Actualiza el estado con los datos de perros obtenidos.
             }
         default:
             return state;
