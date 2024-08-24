@@ -1,4 +1,4 @@
-import { GET_ALL_DOGS } from '../actions/actions-types';
+import { GET_ALL_DOGS, GET_DOG_BY_NAME } from '../actions/actions-types';
 
 const initialState = {
     dogs: []  // Acá se guardaran la lista de todos los perros.
@@ -10,6 +10,11 @@ const reduce = (state = initialState, action) => {
             return {
                 ...state,
                 dogs: action.payload  // Actualiza el estado con los datos de perros obtenidos.
+            }
+        case GET_DOG_BY_NAME:
+            return {
+                ...state,
+                dogs: action.payload
             }
         default:
             return state;
