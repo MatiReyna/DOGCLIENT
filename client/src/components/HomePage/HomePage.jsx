@@ -4,6 +4,7 @@ import { getAllDogs } from '../../redux/actions/actions';
 
 // <-- Importamos los componentes -->
 import Cards from '../Cards/Cards';
+import SearchBar from '../SearchBar/SearchBar';
 
 const HomePage = () => {
 
@@ -32,6 +33,7 @@ const HomePage = () => {
 
     return (
         <div>
+            <SearchBar />
             <Cards dogs={dogs} />
         </div>
     )
