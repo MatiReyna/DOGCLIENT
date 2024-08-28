@@ -5,6 +5,7 @@ import { getAllDogs } from '../../redux/actions/actions';
 // <-- Importamos los componentes -->
 import Cards from '../Cards/Cards';
 import SearchBar from '../SearchBar/SearchBar';
+import Pagination from '../Pagination/Pagination';
 
 const HomePage = () => {
 
@@ -12,8 +13,11 @@ const HomePage = () => {
 
     const [ loading, setLoading ] = useState(true);
     const [ error, setError ] = useState(null);
+    const [ currentPage, setCurrentPage ] = useState(1)  // Estado para la página actual.
 
     const dogs = useSelector((state) => state.dogs);  // Obtiene la lista de perros del estado global.
+
+    const dogsPerPage = 6; 
 
     useEffect(() => {
         const fetchDogs = async () => {
@@ -39,4 +43,4 @@ const HomePage = () => {
     )
 };
 
-export default HomePage;  // Comentario para mantener el commint. Otro comentario 
+export default HomePage;  // Comentario para mantener el commint. Otro comentario, otro comentario.
