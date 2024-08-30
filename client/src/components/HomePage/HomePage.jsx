@@ -16,8 +16,7 @@ const HomePage = () => {
     const [ currentPage, setCurrentPage ] = useState(1)  // Estado para la página actual.
 
     const dogs = useSelector((state) => state.dogs);  // Obtiene la lista de perros del estado global.
-
-    const dogsPerPage = 6; 
+    const dogsPerPage = useSelector((state) => state.dogsPerPage);
 
     useEffect(() => {
         const fetchDogs = async () => {
@@ -32,13 +31,22 @@ const HomePage = () => {
         fetchDogs();
     }, [dispatch]);
 
+    // Obtener los perros para la página actual.
+    const indexOfLastDog = currentPage * dogsPerPage;
+    const indexOfFirstDog = indexOfLastDog - dogsPerPage;
+    const currentDogs = dogs.slice(indexOfFirstDog, indexOfLastDog);
+
+    // Cambiar la pàgina.
+    const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
     if (loading) return <p>Loading...</p>;
     if (error) return <p>{error}</p>;
 
     return (
         <div>
             <SearchBar />
-            <Cards dogs={dogs} />
+            <Cards dogs={currentDogs} />
+            <Pagination dogsPerPage={dogsPerPage} totalDogs={dogs.length} paginate={paginate} />
         </div>
     )
 };
