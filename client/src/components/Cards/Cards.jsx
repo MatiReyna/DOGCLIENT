@@ -27,4 +27,4 @@ const Cards = ({ dogs }) => {
     )
 };
 
-export default Cards;  // Comentario, OTRO COMENTARIO
+export default Cards;  // Comentario, OTRO COMENTARIO. COMENTARIOS
